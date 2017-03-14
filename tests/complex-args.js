@@ -10,7 +10,7 @@ describe("complex args", () => {
 		memoizedFn = Memoizerific(50)(function(arg1, arg2, arg3) {
 			return arg1.num * arg2.num;
 		});
-		memoizedFn(arg1, arg2, arg3);
+		memoizedFn(Object.assign({}, arg1), arg2, arg3);
 	});
 
 	it("should be map or similar", () => {
@@ -36,4 +36,3 @@ describe("complex args", () => {
 		expect(memoizedFn.lru.length).toEqual(2);
 	});
 });
-
